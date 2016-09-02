@@ -3,4 +3,4 @@ HISTSIZE=1000000000000000
 SAVEHIST=1000000000000000
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:${HOME}/bin:$PATH"

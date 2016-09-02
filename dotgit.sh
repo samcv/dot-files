@@ -1,5 +1,7 @@
 #!/bin/sh
 FOLDER=~/dotgit
+cd ~/dotgit
+FOLDER=`pwd`
 mkdir -p ${FOLDER}
 
 echo "Coping this script to ${FOLDER}"
@@ -25,8 +27,8 @@ cp /etc/makepkg.conf ${FOLDER}/etc
 echo "Copying /var/lib files to ${FOLDER}/var/lib"
 mkdir -p ${FOLDER}/var/lib/
 mkdir -p ${FOLDER}/var/lib/connman
-cp /var/lib/connman/settings ${FOLDER}/var/lib/connman
-
+sudo cp /var/lib/connman/settings ${FOLDER}/var/lib/connman
+sudo chown `whoami`:root ${FOLDER}/var/lib/connman/settings
 echo "Copying /usr/share/devtools files to ${FOLDER}/usr/share/"
 mkdir -p ${FOLDER}/usr/share/devtools/
 cp /usr/share/devtools/pacman-extra.conf ${FOLDER}/usr/share/devtools/
