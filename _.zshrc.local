@@ -6,7 +6,8 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 stty sane
 PATH="$(ruby -e 'print Gem.user_dir')/bin:${HOME}/bin:${PATH}"
-alias gita=git add
-alias gitc=git commit -m
-alias gits=git status
-alias gitd=git diff
+alias gita="git add"
+alias gitc="git commit -m"
+alias gits="git status"
+alias gitd="git diff"
+alias gitp="git push"
