@@ -15,7 +15,7 @@ cp ~/.vimrc "${FOLDER}/_.vimrc"
 mkdir -p "${FOLDER}/_.atom"
 cp ~/.atom/keymap.cson "${FOLDER}/_.atom/"
 cp ~/.atom/styles.less "${FOLDER}/_.atom/"
-
+cp ~/.atom/config.cson "${FOLDER}/_.atom/"
 
 echo "Coping user ~/.config files to ${FOLDER}/_.config"
 mkdir -p "${FOLDER}/_.config/mpd"
