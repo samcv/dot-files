@@ -8,10 +8,14 @@ echo "Coping this script to ${FOLDER}"
 cp ~/bin/dotgit.sh "${FOLDER}"
 
 echo "Copying user dot files to ${FOLDER}"
-cp ~/.zshrc.local "${FOLDER}/_.zshrc.local"
+sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/_.zshrc.local"
 cp ~/.xinitrc "${FOLDER}/_.xinitrc"
 cp ~/.Xresources "${FOLDER}/_.Xresources"
 cp ~/.vimrc "${FOLDER}/_.vimrc"
+mkdir -p "${FOLDER}/_.atom"
+cp ~/.atom/keymap.cson "${FOLDER}/_.atom/"
+cp ~/.atom/styles.less "${FOLDER}/_.atom/"
+
 
 echo "Coping user ~/.config files to ${FOLDER}/_.config"
 mkdir -p "${FOLDER}/_.config/mpd"
