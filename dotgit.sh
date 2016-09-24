@@ -31,7 +31,7 @@ mkdir -p "${FOLDER}/etc"
 mkdir -p "${FOLDER}/etc/connman"
 cp /etc/connman/main.conf "${FOLDER}/etc/connman"
 cp /etc/dnsmasq.conf "${FOLDER}/etc"
-mkdir -p "${FOLDER}/etc/"
+cp /etc/sysctl.conf "${FOLDER}/etc"
 cp /etc/pacman.conf "${FOLDER}/etc"
 cp /etc/makepkg.conf "${FOLDER}/etc"
 
