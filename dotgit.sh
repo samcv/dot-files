@@ -34,7 +34,7 @@ cp /etc/dnsmasq.conf "${FOLDER}/etc"
 cp /etc/sysctl.conf "${FOLDER}/etc"
 cp /etc/pacman.conf "${FOLDER}/etc"
 cp /etc/makepkg.conf "${FOLDER}/etc"
-
+cp /etc/resolv.conf "${FOLDER}/etc"
 
 echo "Copying /var/lib files to ${FOLDER}/var/lib"
 mkdir -p "${FOLDER}/var/lib/"
