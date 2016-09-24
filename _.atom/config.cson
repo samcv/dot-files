@@ -12,22 +12,35 @@
       "activate-power-mode"
       "language-chef"
     ]
+    packagesWithKeymapsDisabled: []
   editor:
     backUpBeforeSaving: true
     fontSize: 12
     lineHeight: 1.1
     preferredLineLength: 100
     showIndentGuide: true
+    showInvisibles: true
     tabLength: 4
+    tabType: "hard"
   "exception-reporting":
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
   linter:
-    errorPanelHeight: 56
+    errorPanelHeight: 24
     ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
+    ignoreVCSIgnoredFiles: false
+  "linter-perl":
+    executablePath: "/usr/bin/perl"
+  "linter-perlcritic":
+    executablePath: "/usr/bin/vendor_perl/perlcritic"
   "linter-shellcheck":
     enableNotice: true
   perldoc:
     binary: "/usr/bin/core_perl/pod2html"
+  "terminal-plus":
+    core:
+      autoRunCommand: "zsh"
+    toggles:
+      autoClose: true
   "tree-view":
     showOnRightSide: true
   welcome:

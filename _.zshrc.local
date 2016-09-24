@@ -1,15 +1,29 @@
-alias hgrep="cat ~/.zsh_history | grep"
-alias s="sudo"
+# Environment Variables
 HISTSIZE=1000000000000000
 SAVEHIST=1000000000000000
+PATH="$(ruby -e 'print Gem.user_dir')/bin:${HOME}/bin:${PATH}"
+# Commands
+stty sane
+# zsh options
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
-stty sane
-PATH="$(ruby -e 'print Gem.user_dir')/bin:${HOME}/bin:${PATH}"
+# Aliases
+alias hgrep="cat ~/.zsh_history | grep"
+alias s="sudo"
+# git aliases
 alias gita="git add"
 alias gitc="git commit -m"
 alias gits="git status"
 alias gitd="git diff"
 alias gitp="git push"
-
-alias pa-r="pulseaudio --kill && pulseaudio --start"
+# pulseaudio aliases
+alias pa-k="pulseaudio --kill"
+alias pa-s="pulseaudio --start"
+# zsh aliases
+alias zsh-s="source ~/.zshrc.local"
+alias zsh-e="vim ~/.zshrc.local"
+# misc aliases
+alias sctl="systemctl"
+alias e="exit"
+alias update="sudo pacman -Syyuu && pacaur -Suua"
+alias compose-edit="sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose"
