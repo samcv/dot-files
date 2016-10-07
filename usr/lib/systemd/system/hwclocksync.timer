@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync hardware clock to system clock
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=15m
+
+[Install]
+WantedBy=timers.target

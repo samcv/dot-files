@@ -1,0 +1,7 @@
+[Unit]
+Description=Sync hardware clock to system clock
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hwclock --systohc
+IOSchedulingClass=idle

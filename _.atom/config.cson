@@ -12,6 +12,7 @@
       "language-chef"
     ]
     packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
   editor:
     backUpBeforeSaving: true
     fontSize: 12

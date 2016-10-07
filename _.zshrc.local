@@ -16,6 +16,7 @@ alias gitc='git commit -m'
 alias gits='git status'
 alias gitd='git diff'
 alias gitp='git push'
+alias gitr='git reset'
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'

@@ -54,6 +54,8 @@ echo "Copying /usr/lib/systemd/system files"
 mkdir -p "${FOLDER}/usr/lib/systemd/system"
 cp /usr/lib/systemd/system/connman.service "${FOLDER}/usr/lib/systemd/system"
 cp /usr/lib/systemd/system/dnscrypt-proxy* "${FOLDER}/usr/lib/systemd/system"
+cp /usr/lib/systemd/system/hwclocksync* "${FOLDER}/usr/lib/systemd/system"
+
 sudo cp /var/lib/connman/settings "${FOLDER}/var/lib/connman"
 sudo chown "$(whoami):root" "${FOLDER}/var/lib/connman/settings"
 
