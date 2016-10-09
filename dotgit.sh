@@ -15,6 +15,7 @@ sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/_.zshrc.local"
 cp ~/.xinitrc "${FOLDER}/_.xinitrc"
 cp ~/.Xresources "${FOLDER}/_.Xresources"
 cp ~/.vimrc "${FOLDER}/_.vimrc"
+cp ~/.profile "${FOLDER}/_.profile"
 
 echo "Copying atom configuration files"
 mkdir -p "${FOLDER}/_.atom"

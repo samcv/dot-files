@@ -8,22 +8,25 @@ stty sane
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 # Aliases
-alias hgrep="cat ~/.zsh_history | grep"
-alias s="sudo"
+alias hgrep='cat ~/.zsh_history | grep'
+alias s='sudo'
 # git aliases
-alias gita="git add"
-alias gitc="git commit -m"
-alias gits="git status"
-alias gitd="git diff"
-alias gitp="git push"
+alias gita='git add'
+alias gitc='git commit -m'
+alias gits='git status'
+alias gitd='git diff'
+alias gitp='git push'
 # pulseaudio aliases
-alias pa-k="pulseaudio --kill"
-alias pa-s="pulseaudio --start"
+alias pa-k='pulseaudio --kill'
+alias pa-s='pulseaudio --start'
 # zsh aliases
-alias zsh-s="source ~/.zshrc.local"
-alias zsh-e="vim ~/.zshrc.local"
+alias zsh-s='source ~/.zshrc.local'
+alias zsh-e='vim ~/.zshrc.local'
 # misc aliases
-alias sctl="systemctl"
-alias e="exit"
-alias update="sudo pacman -Syyuu && pacaur -Suua"
-alias compose-edit="sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose"
+alias sctl='systemctl'
+alias e='exit'
+alias update='sudo pacman -Syyuu && pacaur -Suua'
+alias compose-edit='sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose'
+alias pg='pgrep'
+alias pg-a='pgrep -a'
+alias wcc="pee 'wc -l' 'cat'"

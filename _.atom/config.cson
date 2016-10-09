@@ -9,7 +9,6 @@
       "language-ruby-on-rails"
       "vim-mode"
       "open-on-github"
-      "activate-power-mode"
       "language-chef"
     ]
     packagesWithKeymapsDisabled: []
@@ -36,6 +35,8 @@
     enableNotice: true
   perldoc:
     binary: "/usr/bin/core_perl/pod2html"
+  perltidy:
+    binary: "/usr/bin/vendor_perl/perltidy"
   "terminal-plus":
     core:
       autoRunCommand: "zsh"
