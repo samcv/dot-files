@@ -26,7 +26,7 @@ cp ~/.atom/config.cson "${FOLDER}/_.atom/"
 echo "Coping user ~/.config files to ${FOLDER}/_.config"
 mkdir -p "${FOLDER}/_.config/mpd"
 cp ~/.config/mpd/mpd.conf "${FOLDER}/_.config/mpd"
-
+cp ~/.config/chromium-flags.conf "${FOLDER}/_.config"
 echo "Copying /etc files to ${FOLDER}/etc"
 mkdir -p "${FOLDER}/etc"
 mkdir -p "${FOLDER}/etc/connman"
