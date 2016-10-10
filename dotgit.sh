@@ -13,6 +13,7 @@ echo "Copying user dot files to ${FOLDER}"
 # Copy anything in .zshrc.local that doesn't have a space in front of it
 sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/_.zshrc.local"
 cp ~/.xinitrc "${FOLDER}/_.xinitrc"
+cp ~/.XCompose "${FOLDER}/_.XCompose"
 cp ~/.Xresources "${FOLDER}/_.Xresources"
 cp ~/.vimrc "${FOLDER}/_.vimrc"
 cp ~/.profile "${FOLDER}/_.profile"
