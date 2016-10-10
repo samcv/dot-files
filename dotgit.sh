@@ -41,6 +41,8 @@ echo "Copying profile.d contents to ${FOLDER}/etc/profile.d"
 mkdir -p "${FOLDER}/etc/profile.d"
 cp /etc/profile.d/perl6bin.sh "${FOLDER}/etc/profile.d"
 cp /etc/profile.d/vdpau_driver.sh "${FOLDER}/etc/profile.d"
+cp /etc/profile.d/compose.sh "${FOLDER}/etc/profile.d"
+
 
 
 
