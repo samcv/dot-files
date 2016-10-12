@@ -1,43 +1,94 @@
-! xft font settings
-Xft.antialias      : 1
-Xft.autohint       : 1
-Xft.hinting        : 1
-Xft.hintstyle      : hintslight
-Xft.rgba           : rgb
+URxvt*geometry: 120x40
+URxvt*font:         xft:tewi2a-medium:pixelsize=11:antialias=false
+URxvt*boldFont:     xft:tewi2a-bold:size=11:antialias=false
+URxvt.preeditType: Root
 
-! set 256 colors
-UXTerm*termName : xterm-256color
+URxvt*saveLines: 100000
+URxvt*scrollBar: false
 
-! set urxvt generic settings
-!URxvt.font : xft:Liberation Mono:pixelsize=12
-URxvt*font:			xft:tewi2a-medium:pixelsize=11:antialias=false
-URxvt*boldFont:		xft:tewi2a-bold:size=11:antialias=false
-!URxvt*font:   xft:Ttyp0:pixelsize=12:antialias=true, xft:Noto Emoji:pixelsize=36
+URxvt.urgentOnBell: true
+
+URxvt*cursorBlink: on
+URxvt*cursorUnderline: on
+!URxvt*cursorColor: white
+!URxvt*cursorColor2: #aaaaaa
+
+URxvt.iso14755: off
+URxvt.iso14755_52: off
+
+URxvt.scrollTtyKeypress: on
+URxvt.scrollTtyOutput: off
+URxvt.scrollWithBuffer: on
+
+! tabbedex is not provided by default (Debian/Ubuntu)
+! put it in ~/.urxvt/
+URxvt.perl-lib: .urxvt/
+URxvt.perl-ext-common: default,matcher,clipboard
+! Launch firefox with the a left click on a URL
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.keysym.S-C-C: perl:clipboard:copy
+URxvt.keysym.S-C-V: perl:clipboard:paste
+URxvt.keysym.S-C-B: perl:clipboard:paste_escaped
+URxvt.keysym.S-C-U: perl:url-select:select_next
+
+! Display the title of terminal next to tabs list
+URxvt.tabbed.title: true
+URxvt.tabbed.title-bg: 8
+URxvt.tabbed.title-fg: 7
+
+! correct name so that applications detects a 256 color
+! enabled terminal emulator
+URxvt*termName: rxvt-unicode-256color
+
+! emulate xterm-style control codes for ctrl+arrows and alt+arrows, etc
+URxvt.keysym.S-Up:        \033[1;2A
+URxvt.keysym.S-Down:      \033[1;2B
+URxvt.keysym.S-Right:     \033[1;2C
+URxvt.keysym.S-Left:      \033[1;2D
+URxvt.keysym.M-Up:        \033[1;3A
+URxvt.keysym.M-Down:      \033[1;3B
+URxvt.keysym.M-Right:     \033[1;3C
+URxvt.keysym.M-Left:      \033[1;3D
+URxvt.keysym.S-M-Up:      \033[1;4A
+URxvt.keysym.S-M-Down:    \033[1;4B
+URxvt.keysym.S-M-Right:   \033[1;4C
+URxvt.keysym.S-M-Left:    \033[1;4D
+URxvt.keysym.C-Up:        \033[1;5A
+URxvt.keysym.C-Down:      \033[1;5B
+URxvt.keysym.C-Right:     \033[1;5C
+URxvt.keysym.C-Left:      \033[1;5D
+URxvt.keysym.S-C-Up:      \033[1;6A
+URxvt.keysym.S-C-Down:    \033[1;6B
+URxvt.keysym.S-C-Right:   \033[1;6C
+URxvt.keysym.S-C-Left:    \033[1;6D
+URxvt.keysym.M-C-Up:      \033[1;7A
+URxvt.keysym.M-C-Down:    \033[1;7B
+URxvt.keysym.M-C-Right:   \033[1;7C
+URxvt.keysym.M-C-Left:    \033[1;7D
+URxvt.keysym.S-M-C-Up:    \033[1;8A
+URxvt.keysym.S-M-C-Down:  \033[1;8B
+URxvt.keysym.S-M-C-Right: \033[1;8C
+URxvt.keysym.S-M-C-Left:  \033[1;8D
+
+URxvt*cutchars: '"'&()*,;<=>?@[]^{|}\:
+URxvt*depth: 32
+
+Xft.lcdfilter: ldcdefault
+Xft.hintstyle: hintslight
+
+xterm*font: Tewi
+xterm*termName: xterm-256color
+xterm*locale: true
+xterm*metaSendsEscape: true
+xterm*foreground: rgb:cc/cc/cc
+xterm*background: rgb:00/00/00
+
+
 
 URxvt.scrollBar : false
 ! urxvt colors
 URxvt*background  : [90]#000000
 URxvt*foreground  : #eeeeee
 URxvt*cursorColor : #eeeeee
-!URxvt*color6      : #6eb5f3
-!URxvt*color7      : #a9a9a9
-!URxvt*color8      : #535551
-!URxvt*color9      : #ea2828
-!URxvt*color10     : #87dd32
-!URxvt*color12     : #6f9bca
-!URxvt*color13     : #a97ca4
-!URxvt*color14     : #32dddd
-!URxvt*color15     : #e9e9e7
-
-! urxvt fake transparency
-URxvt.transparent : true
-URxvt.shading     : 8
-
-! padding
-URxvt.internalBorder: 6
-
-! urxvt clickable URLs
-URxvt.perl-ext-common : default,matcher
-URxvt.url-launcher    : /usr/bin/palemoon
-URxvt.matcher.button  : 1
-
