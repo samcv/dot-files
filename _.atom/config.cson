@@ -10,12 +10,13 @@
       "vim-mode"
       "open-on-github"
       "language-chef"
+      "linter-perlcritic"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
   editor:
     backUpBeforeSaving: true
-    fontSize: 13
+    fontSize: 15
     lineHeight: 1.1
     preferredLineLength: 100
     showIndentGuide: true

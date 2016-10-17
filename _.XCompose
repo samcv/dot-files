@@ -13,6 +13,7 @@ include "%L"
 # Samantha's Custom
 <Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN 
 <Multi_key> <1> <0> <0> : "💯" U1F4AF # HUNDRED POINTS SYMBOL 
+<Multi_key> <greater> <grave> : "´" UB4 # Accent
 # Custom additions: Typography
 <Multi_key> <period> <period>		: "…"	U2026		# HORIZONTAL ELLIPSIS
 <Multi_key> <v> <period> <period>	: "⋮"	U22EE		# VERTICAL ELLIPSIS
