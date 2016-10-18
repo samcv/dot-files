@@ -24,6 +24,7 @@ alias pa-s='pulseaudio --start'
 alias zsh-s='source ~/.zshrc.local'
 alias zsh-e='vim ~/.zshrc.local'
 # misc aliases
+alias p6='perl6'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias sctl='systemctl'
 alias e='exit'

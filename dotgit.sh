@@ -40,6 +40,8 @@ cp /etc/pacman.conf "${FOLDER}/etc"
 cp /etc/makepkg.conf "${FOLDER}/etc"
 cp /etc/resolv.conf "${FOLDER}/etc"
 cp /etc/thinkfan.conf "${FOLDER}/etc"
+mkdir -p "${FOLDER}/etc/udev/rules.d"
+cp /etc/udev/rules.d/10-trackpoint.rules "${FOLDER}/etc/udev/rules.d"
 
 echo "Copying /etc/connman files"
 mkdir -p "${FOLDER}/etc/connman"

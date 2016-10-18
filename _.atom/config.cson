@@ -11,6 +11,11 @@
       "open-on-github"
       "language-chef"
       "linter-perlcritic"
+      "language-gfm"
+      "language-markdown"
+      "markdown-preview-plus"
+      "language-perl6fe"
+      "language-perl"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -18,7 +23,6 @@
     backUpBeforeSaving: true
     fontSize: 10
     lineHeight: 1.1
-    preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
@@ -48,6 +52,9 @@
     showOnRightSide: true
   welcome:
     showOnStartup: false
+".md.text":
+  editor:
+    tabLength: 4
 ".meta-info.source":
   editor:
     preferredLineLength: 100
