@@ -33,4 +33,6 @@ alias compose-edit='sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose'
 alias pg='pgrep'
 alias pg-a='pgrep -a'
 alias wcc="pee 'wc -l' 'cat'"
+# Reload udev rules
+alias udev-r='sudo udevadm trigger'
 source ~/.profile
