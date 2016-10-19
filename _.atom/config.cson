@@ -21,7 +21,7 @@
     telemetryConsent: "no"
   editor:
     backUpBeforeSaving: true
-    fontSize: 10
+    fontSize: 12
     lineHeight: 1.1
     showIndentGuide: true
     showInvisibles: true
