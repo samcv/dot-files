@@ -1,5 +1,9 @@
 URxvt*geometry: 120x40
-URxvt*font:         xft:tewi2a-medium:pixelsize=11:antialias=false,xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false,xft:Symbola:pixelsize=6:minspace=False:antialias=False
+! Fallback fonts with wide symbols in them need the pixelsize set to a really
+! small value since urxvt doesn't know what to do when it encounters a glyph
+! that is wider than the main font.
+
+URxvt*font: xft:tewi2a-medium:pixelsize=11:antialias=false,xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false,xft:Symbola:pixelsize=6:minspace=False:antialias=False
 
 URxvt.preeditType: Root
 
