@@ -5,6 +5,10 @@ allow_if_string_contains_single_quote = 1
 
 [-ValuesAndExpressions::RequireInterpolationOfMetachars]
 
+[-CodeLayout::RequireASCII]
+
+[-Compatibility::PerlMinimumVersionAndWhy]
+
 [-Modules::RequireNoMatchVarsWithUseEnglish]
 
 [-ValuesAndExpressions::ProhibitMagicNumbers]

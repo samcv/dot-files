@@ -35,4 +35,6 @@ alias pg-a='pgrep -a'
 alias wcc="pee 'wc -l' 'cat'"
 # Reload udev rules
 alias udev-r='sudo udevadm trigger'
-source ~/.profile
+if [ -f ~/.profile ]; then
+	source ~/.profile
+fi

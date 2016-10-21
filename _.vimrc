@@ -1,5 +1,5 @@
 "set the theme color
-colorscheme neonwave
+"colorscheme neonwave
 "set smartindent
 syntax on
 filetype plugin indent on

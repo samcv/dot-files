@@ -15,7 +15,6 @@
       "markdown-preview-plus"
       "language-perl6fe"
       "atom-perl6-editor-tools"
-      "linter-perlcritic"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
