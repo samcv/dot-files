@@ -14,6 +14,7 @@ include "%L"
 <Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN 
 <Multi_key> <1> <0> <0> : "💯" U1F4AF # HUNDRED POINTS SYMBOL 
 <Multi_key> <T> <U> <S>: "👍" U1F44D # THUMBS UP SIGN
+<Multi_key> <T> <D> <S>: "👎" U1F44E # THUMBS DOWN SIGN
 <Multi_key> <greater> <grave> : "´" UB4 # Accent
 # Custom additions: Typography
 <Multi_key> <period> <period>		: "…"	U2026		# HORIZONTAL ELLIPSIS
