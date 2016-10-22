@@ -20,6 +20,7 @@ alias gitr='git reset'
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'
+alias vim-e='vim ~/.vimrc'
 # zsh aliases
 alias zsh-s='source ~/.zshrc.local'
 alias zsh-e='vim ~/.zshrc.local'
