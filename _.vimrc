@@ -1,14 +1,18 @@
 set nocompatible
+execute pathogen#infect()
 set statusline=\         " One space
 set statusline+=%#todo#  " Set todo highlighting
 set statusline+=%t       " Filename
 set statusline+=%*       " End highlighting
 set statusline+=\ %F\ \  " Full filename
 set statusline+=%{strlen(&fenc)?&fenc:'none'}\  " Something
-set statusline+=%{&ff}\  " Filetype
-set statusline+=%h%m%r%y " Flags
-set statusline+=/%=      " Alight to right
-set statusline+=%c,%l/%L\ \ 
+set statusline+=%{&ff}\  " unix/other encoding
+set statusline+=%h%m%r   " Flags
+set statusline+=%#todo#
+set statusline+=%y       " Filetype
+set statusline+=%*
+set statusline+=%=      " Alight to right
+set statusline+=%c,%l/%L\ \ " Row column and total length 
 set statusline+=%P      " Percent of the way through filee
 if has("gui_running") || &t_Co >= 256
 	colorscheme quantum
@@ -46,3 +50,7 @@ set shiftwidth=4
 "set expandtab
 " Show line numbers
 set number
+" Remember last position in files:
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif

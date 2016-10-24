@@ -10,6 +10,8 @@ if [ -f /usr/bin/ruby ]; then
 	# Load RVM into a shell session *as a function*
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi
+# Add ~/bin to path:
+PATH="$PATH:$HOME/bin"
 #export GTK_IM_MODULE='xim'
 #export XMODIFIERS="@im=none"
 #export QT_IM_MODULE='xim'
