@@ -11,11 +11,13 @@ include "%L"
 #     emit(' '.join("<%s>" % char for char in str(num)), 0x245f + num, word)
 
 # Samantha's Custom
-<Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN 
-<Multi_key> <1> <0> <0> : "💯" U1F4AF # HUNDRED POINTS SYMBOL 
-<Multi_key> <T> <U> <S>: "👍" U1F44D # THUMBS UP SIGN
-<Multi_key> <T> <D> <S>: "👎" U1F44E # THUMBS DOWN SIGN
-<Multi_key> <exclam> <exclam> <exclam>: "⚠" U26A0 # WARNING SIGN
+<Multi_key> <Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN 
+<Multi_key> <Multi_key> <1> <0> <0> : "💯" U1F4AF # HUNDRED POINTS SYMBOL 
+<Multi_key> <Multi_key> <T> <U> <S>: "👍" U1F44D # THUMBS UP SIGN
+<Multi_key> <Multi_key> <T> <D> <S>: "👎" U1F44E # THUMBS DOWN SIGN
+<Multi_key> <Multi_key> <exclam> <exclam> <exclam>: "⚠" U26A0 # WARNING SIGN
+<Multi_key> <Multi_key> <S> <T> <A> <R>: "🌟" U1F31F # GLOWING STAR
+<Multi_key> <Multi_key> <S> <S> <T> <A> <R>: "🌠' U1F320 # SHOOTING STAR
 <Multi_key> <greater> <grave> : "´" UB4 # Accent
 # Custom additions: Typography
 <Multi_key> <period> <period>		: "…"	U2026		# HORIZONTAL ELLIPSIS

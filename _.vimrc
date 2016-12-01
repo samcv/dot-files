@@ -16,12 +16,13 @@ set statusline+=%c,%l/%L\ \ " Row column and total length
 set statusline+=%P      " Percent of the way through filee
 if has("gui_running") || &t_Co >= 256
 	colorscheme quantum
+	set lazyredraw " Buffer screen updates (makes it more responsive)
+	set ttyfast
 else
 	colorscheme neonwave
 endif
-set encoding=utf-8     "Encoding displayed
+"set encoding=utf-8     "Encoding displayed
 set fileencoding=utf-8 "Encoding written
-set smartindent
 set showmode
 set cursorline      " Show a line across on the current cursor line
 syntax on           " Syntax highlighting
@@ -32,13 +33,13 @@ set visualbell      " Use visual bell instead of beeping
 set listchars=tab:▸\ ,eol:¬,space:·
 set showmatch       " Show matching brackets/parenthesis
 set incsearch       " Search as you type
-set hlsearch        " Hilight searches
+set hlsearch        " Highlight searches
 set ignorecase      " Ignore case when searching
 set smartcase       " Enable case sensitivity when searching with capitals
 "set nobackup       " Disable backup files
 "set noswapfile     " Disable swap files
 set autoindent      " Inherit indentation from previous line
-set smartindent     " Use newline autoindentation
+" set smartindent     " Use newline autoindentation
 filetype plugin indent on
 " Show existing tab with 4 spaces width
 set tabstop=4
@@ -48,9 +49,12 @@ set history=1000
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 "set expandtab
+set mouse=v
 " Show line numbers
 set number
 " Remember last position in files:
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+" associate *.nqp with perl6 filetype
+au BufRead,BufNewFile *.nqp setfiletype perl6

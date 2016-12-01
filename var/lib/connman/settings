@@ -6,7 +6,7 @@ Nameservers=127.0.0.1
 OfflineMode=false
 
 [Bluetooth]
-Enable=false
+Enable=true
 Tethering=false
 
 [WiFi]

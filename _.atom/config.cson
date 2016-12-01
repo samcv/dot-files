@@ -11,25 +11,28 @@
       "open-on-github"
       "language-chef"
       "language-gfm"
-      "language-markdown"
       "markdown-preview-plus"
-      "language-perl6fe"
+      "markdown-scroll-sync"
+      "linter-perlcritic"
+      "linter-perl"
+      "perltidy"
+      "language-perl"
       "atom-perl6-editor-tools"
+      "hyperclick"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
   editor:
     backUpBeforeSaving: true
-    fontSize: 12
+    fontFamily: "Fira Code"
     lineHeight: 1.1
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…"
     showIndentGuide: true
     showInvisibles: true
-    tabLength: 4
-    tabType: "hard"
   "exception-reporting":
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
   linter:
-    errorPanelHeight: 24
+    errorPanelHeight: 22
     ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
     ignoreVCSIgnoredFiles: false
   "linter-perl":
