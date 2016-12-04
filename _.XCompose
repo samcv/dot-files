@@ -11,6 +11,13 @@ include "%L"
 #     emit(' '.join("<%s>" % char for char in str(num)), 0x245f + num, word)
 
 # Samantha's Custom
+<Multi_key> <backslash> <n> : "␤" U2424 # SYMBOL FOR NEWLINE
+<Multi_key> <backslash> <t> : "↹" U21B9
+<Multi_key> <greater> <grave> : "´" U00B4 # Accent
+<Multi_key> <m> <minus> : "−" U2212 # MINUS SIGN
+<Multi_key> <M> <minus>	: "—"	U2014		# EM DASH
+<Multi_key> <n> <minus> : "–"	U2013		# EN DASH
+# My custom emoticons
 <Multi_key> <Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN 
 <Multi_key> <Multi_key> <1> <0> <0> : "💯" U1F4AF # HUNDRED POINTS SYMBOL 
 <Multi_key> <Multi_key> <T> <U> <S>: "👍" U1F44D # THUMBS UP SIGN
@@ -18,7 +25,7 @@ include "%L"
 <Multi_key> <Multi_key> <exclam> <exclam> <exclam>: "⚠" U26A0 # WARNING SIGN
 <Multi_key> <Multi_key> <S> <T> <A> <R>: "🌟" U1F31F # GLOWING STAR
 <Multi_key> <Multi_key> <S> <S> <T> <A> <R>: "🌠' U1F320 # SHOOTING STAR
-<Multi_key> <greater> <grave> : "´" UB4 # Accent
+
 # Custom additions: Typography
 <Multi_key> <period> <period>		: "…"	U2026		# HORIZONTAL ELLIPSIS
 <Multi_key> <v> <period> <period>	: "⋮"	U22EE		# VERTICAL ELLIPSIS
@@ -37,8 +44,6 @@ include "%L"
 # for this?
 <Multi_key> <backslash> <space>		: "␣"	U2423		# OPEN BOX
 # These two are already present for me:
-# <Multi_key> <minus> <minus> <minus>	: "—"	U2014		# EM DASH
-# <Multi_key> <minus> <minus> <period>	: "–"	U2013		# EN DASH
 <Multi_key> <minus> <minus> <space>	: "– "			# EN DASH (followed by space)
 <Multi_key> <minus> <asciitilde> <minus> : "―" U2015 # HORIZONTAL BAR
 <Multi_key> <minus> <2> <M>	 	 : "⸺" U2E3A # TWO-EM DASH
