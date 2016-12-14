@@ -20,7 +20,7 @@ alias gitf='git fetch'
 alias gits='git status'
 alias gitd='git diff'
 alias gitp='git push'
-alias gitr='git reset'
+alias gitrt='git reset'
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'
@@ -31,7 +31,10 @@ alias zsh-e='vim ~/.zshrc.local'
 # ruby alias
 alias be='bundle exec'
 # misc aliases
+# Perl Aliases
 alias p6='perl6'
+alias 6='perl6'
+alias nqp='rlwrap nqp'
 alias p='perl'
 alias perl5='perl'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'

@@ -16,20 +16,20 @@
       "linter-perlcritic"
       "linter-perl"
       "perltidy"
-      "atom-perl6-editor-tools"
       "hyperclick"
       "build"
       "refactor"
+      "whitespace"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Fira Mono"
-    fontSize: 20
+    fontFamily: "Fira Code"
     lineHeight: 1.1
-    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…"
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
+    showInvisibles: true
   "exception-reporting":
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
   linter:
@@ -59,6 +59,10 @@
   editor:
     tabLength: 4
 ".meta-info.source":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".perl6fe.quoting.source":
   editor:
     preferredLineLength: 100
     tabLength: 4

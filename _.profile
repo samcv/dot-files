@@ -29,6 +29,9 @@ fi
 if [ -f ~/.rakudobrew/bin/rakudobrew ]; then
 	eval "$(/home/samantha/.rakudobrew/bin/rakudobrew init -)"
 fi
-if [ -f "$HOME/.rakudobrew/moar-blead-nom/install/share/perl6/site/bin" ]; then
-	export PATH="$PATH:$HOME/.rakudobrew/moar-blead-nom/install/share/perl6/site/bin"
+PERL6_DIR="$HOME/perl6/bin"
+#PERL6_DIR="$HOME/.rakudobrew/moar-blead-nom/install/share/perl6/site/bin"
+if [ -d "$PERL6_DIR" ]; then
+	export PATH="$PATH:$PERL6_DIR"
+	export PATH="$HOME/perl6/share/perl6/site/bin:$PATH"
 fi
