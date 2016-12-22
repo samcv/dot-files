@@ -18,6 +18,7 @@ cp ~/.Xresources "${FOLDER}/_.Xresources"
 cp ~/.vimrc "${FOLDER}/_.vimrc"
 cp ~/.profile "${FOLDER}/_.profile"
 cp ~/.perlcriticrc "${FOLDER}/_.perlcriticrc"
+cp ~/.gitconfig "${FOLDER}/_.gitconfig"
 
 echo "Copying includes"
 mkdir -p "${FOLDER}/includes/st"
