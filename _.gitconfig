@@ -4,5 +4,17 @@ email = samantham@posteo.net
 signingKey = E2AEB3D93FB3940B844C9E08A68DF012C3881D62
 [commit]
 gpgSign = true
-[branch]
-	autosetuprebase = always
+[alias]
+b  = branch
+a  = add
+c  = commit
+l  = log
+m  = merge
+co = checkout
+s  = status
+p  = push
+pl = pull
+rm = remove
+rb = rebase
+d  = diff
+wdiff = diff --color-words

@@ -43,6 +43,7 @@ cp /etc/mkinitcpio.conf "${FOLDER}/etc"
 cp /etc/makepkg.conf "${FOLDER}/etc"
 sudo cp /etc/resolv.conf "${FOLDER}/etc"
 cp /etc/thinkfan.conf "${FOLDER}/etc"
+cp /etc/locale.conf "${FOLDER}/etc"
 mkdir -p "${FOLDER}/etc/udev/rules.d"
 cp /etc/udev/rules.d/10-trackpoint.rules "${FOLDER}/etc/udev/rules.d"
 

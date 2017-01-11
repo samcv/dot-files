@@ -16,20 +16,28 @@
       "linter-perlcritic"
       "linter-perl"
       "perltidy"
-      "hyperclick"
       "build"
-      "refactor"
+      "busy"
+      "highlight-selected"
+      "hyperclick"
+      "json-colorer"
+      "linter-clang"
       "whitespace"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Fira Code"
+    fontSize: 11
     lineHeight: 1.1
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
     showInvisibles: true
+    tabLength: 4
   "exception-reporting":
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
   linter:
