@@ -9,6 +9,8 @@ setopt hist_ignore_space
 # Aliases
 alias hgrep='cat ~/.zsh_history | grep'
 alias s='sudo'
+alias a='atom-beta'
+alias k='kate'
 # git aliases
 alias gitb='git branch'
 alias gita='git add'
@@ -59,3 +61,4 @@ fi
 
 
 
+alias gitmlog='git log $(git merge-base --octopus $(git log --merges --pretty=format:%P)).. --boundary --graph --pretty=oneline --abbrev-commit'

@@ -20,6 +20,8 @@ cp ~/.profile "${FOLDER}/_.profile"
 cp ~/.perlcriticrc "${FOLDER}/_.perlcriticrc"
 cp ~/.gitconfig "${FOLDER}/_.gitconfig"
 
+cp ~/git/UCD-samcv/.nav-marker-rules "${FOLDER}/.nav-marker-rules"
+
 echo "Copying includes"
 mkdir -p "${FOLDER}/includes/st"
 cp ~/svn/community/st/trunk/config.h "${FOLDER}/includes/st"

@@ -18,7 +18,6 @@
       "perltidy"
       "build"
       "busy"
-      "highlight-selected"
       "hyperclick"
       "json-colorer"
       "linter-clang"
@@ -32,7 +31,8 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontSize: 11
+    fontFamily: "Noto Mono"
+    fontSize: 16
     lineHeight: 1.1
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
@@ -40,6 +40,8 @@
     tabLength: 4
   "exception-reporting":
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
+  "file-types":
+    "\\.pmaaa$": "source.perl6fe"
   linter:
     errorPanelHeight: 22
     ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
@@ -54,6 +56,16 @@
     binary: "/usr/bin/core_perl/pod2html"
   perltidy:
     binary: "/usr/bin/vendor_perl/perltidy"
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "comment.block.delimited.perl6"
+    ]
+  "split-diff": {}
   "terminal-plus":
     core:
       autoRunCommand: "zsh"
@@ -68,7 +80,6 @@
     tabLength: 4
 ".meta-info.source":
   editor:
-    preferredLineLength: 100
     tabLength: 4
 ".perl6fe.quoting.source":
   editor:
@@ -80,5 +91,4 @@
     tabLength: 4
 ".perl6fe.source":
   editor:
-    preferredLineLength: 100
     tabLength: 4
