@@ -14,7 +14,7 @@ if [ -f /usr/bin/ruby ]; then
 fi
 # Add ~/bin to path:
 if [ -d "$HOME/bin" ]; then
-	PATH="$PATH:$HOME/bin"
+	PATH="$HOME/bin:$PATH"
 fi
 if [ "$GTK_IM_MODULE" = '' ]; then
 	export GTK_IM_MODULE='xim'

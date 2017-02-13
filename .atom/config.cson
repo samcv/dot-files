@@ -3,6 +3,19 @@
     confirmCompletion: "tab"
   "bracket-matcher":
     autocompleteBrackets: false
+    autocompleteCharacters: [
+      "()"
+      "[]"
+      "{}"
+      "\"\""
+      "''"
+      "``"
+      "“”"
+      "‘’"
+      "«»"
+      "‹›"
+      "<>"
+    ]
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -31,8 +44,7 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Noto Mono"
-    fontSize: 16
+    fontFamily: "Fira Code"
     lineHeight: 1.1
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true

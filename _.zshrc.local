@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Environment Variables
 HISTSIZE=1000000000000000
 SAVEHIST=1000000000000000
@@ -39,10 +40,15 @@ alias be='bundle exec'
 # Perl Aliases
 alias p6='perl6'
 alias 6='rlwrap perl6'
+alias 6-m='rlwrap perl6-m'
+alias 6-j='rlwrap perl6-j'
 alias nqp='rlwrap nqp'
 alias nqp-j='rlwrap nqp-j'
 alias nqp-jvm='rlwrap nqp-jvm'
-export TEST_JOBS=$(expr 1 + $(nproc))
+TEST_JOBS=$(expr 1 + $(nproc))
+export TEST_JOBS
+alias prove6='prove -e perl6'
+alias make="/usr/bin/make -j $TEST_JOBS"
 alias p='perl'
 alias perl5='perl'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -62,3 +68,4 @@ fi
 
 
 alias gitmlog='git log $(git merge-base --octopus $(git log --merges --pretty=format:%P)).. --boundary --graph --pretty=oneline --abbrev-commit'
+alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
