@@ -14,7 +14,7 @@ Enable=true
 Tethering=false
 
 [Wired]
-Enable=false
+Enable=true
 Tethering=false
 
 [P2P]

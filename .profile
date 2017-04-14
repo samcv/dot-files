@@ -16,11 +16,15 @@ fi
 if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
+# Add ~/git/diff-so-fancy to path:
+if [ -d "$HOME/git/diff-so-fancy" ]; then
+	PATH="$HOME/git/diff-so-fancy:$PATH"
+fi
 if [ "$GTK_IM_MODULE" = '' ]; then
-	export GTK_IM_MODULE='xim'
+	#export GTK_IM_MODULE='xim'
 fi
 if [ "$QT_IM_MODULE" = '' ]; then
-	export QT_IM_MODULE='xim'
+	#export QT_IM_MODULE='xim'
 fi
 #export XMODIFIERS="@im=none"
 
@@ -35,3 +39,6 @@ if [ -d "$PERL6_DIR" ]; then
 	export PATH="$PATH:$PERL6_DIR"
 	export PATH="$HOME/perl6/share/perl6/site/bin:$PATH"
 fi
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus

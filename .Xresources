@@ -80,7 +80,7 @@ URxvt*cutchars: '"'&()*,;<=>?@[]^{|}\:
 URxvt*depth: 32
 
 Xft.lcdfilter: ldcdefault
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintnone
 
 xterm*font: Tewi
 xterm*termName: xterm-256color

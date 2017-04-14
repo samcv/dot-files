@@ -27,6 +27,18 @@ include "%L"
 <Multi_key> <e> <o>			        : "∈"	U2208   # ELEMENT OF
 <Multi_key>  <s> <m>		        : "∖"	U2216   # SET MINUS
 
+## Diacritic letters
+<Multi_key> <D> <period>          : "Ḍ" U1E0C # LATIN CAPITAL LETTER D WITH DOT BELOW
+<Multi_key> <d> <period>          : "ḍ" U1E0D # LATIN SMALL LETTER D WITH DOT BELOW
+
+<Multi_key> <T> <period>          : "Ṭ" U1E6C # LATIN CAPITAL LETTER T WITH DOT BELOW
+<Multi_key> <t> <period>          : "ṭ" U1E6D # LATIN SMALL LETTER T WITH DOT BELOW
+
+<Multi_key> <N> <period>          : "Ṇ" U1E46 # LATIN CAPITAL LETTER N WITH DOT BELOW
+<Multi_key> <n> <period>          : "ṇ" U1E47 # LATIN SMALL LETTER N WITH DOT BELOW
+
+<Multi_key> <M> <period>          : "Ṃ" U1E42 # LATIN CAPITAL LETTER M WITH DOT BELOW
+<Multi_key> <m> <period>          : "ṃ" U1E43 # LATIN SMALL LETTER M WITH DOT BELOW
 
 
 # My custom emoticons

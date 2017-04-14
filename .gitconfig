@@ -1,27 +1,35 @@
 [core]
-    editor = 'kwrite'
-[user]
-    name = Samantha McVey
-    email = samantham@posteo.net
-    signingKey = E2AEB3D93FB3940B844C9E08A68DF012C3881D62
+	#editor = vim
+	editor = 'kwrite'
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [commit]
-    gpgSign = true
+	verbose = 1	
+[user]
+	name = Samantha McVey
+	email = samantham@posteo.net
+	signingKey = E2AEB3D93FB3940B844C9E08A68DF012C3881D62
+[commit]
+	gpgSign = true
 [diff]
-    algorithm = minimal
-    indentHeuristic = on
-    compactionHeuristic = on
+	algorithm = patience
+	indentHeuristic = on
+	compactionHeuristic = on
+
+[diff "perl6"]
+xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
+
 [alias]
-    log-merge = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P $1))..$1 --graph --pretty=oneline --abbrev-commit --boundary
-    b  = branch
-    a  = add
-    c  = commit
-    l  = log
-    m  = merge
-    co = checkout
-    s  = status
-    p  = push
-    pl = pull
-    rm = remove
-    rb = rebase
-    d  = diff
-    wdiff = diff --color-words
+	log-merge = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P $1))..$1 --graph --pretty=oneline --abbrev-commit --boundary
+	b  = branch
+	a  = add
+	c  = commit
+	l  = log
+	m  = merge
+	co = checkout
+	s  = status
+	p  = push
+	pl = pull
+	rm = remove
+	rb = rebase
+	d  = diff
+	wdiff = diff --color-words

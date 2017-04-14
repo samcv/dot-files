@@ -1,4 +1,9 @@
 #!/usr/bin/env zsh
+# This file is for ZSH settings. Anything that should be loaded for the entire user should
+# go into ~/.profile
+# ~/.profile is imported in at the end of this script to ensure it gets run as well, but
+# make sure to keep seperation of functions
+# 
 # Environment Variables
 HISTSIZE=1000000000000000
 SAVEHIST=1000000000000000
@@ -69,3 +74,9 @@ fi
 
 alias gitmlog='git log $(git merge-base --octopus $(git log --merges --pretty=format:%P)).. --boundary --graph --pretty=oneline --abbrev-commit'
 alias isodate='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+alias ram='sudo dmidecode'
+if [ $(which chromium-dev ) ]; then
+	alias c='chromium-dev'
+elif [ $(which chromium) ]; then
+	alias c='chromium'
+fi    
