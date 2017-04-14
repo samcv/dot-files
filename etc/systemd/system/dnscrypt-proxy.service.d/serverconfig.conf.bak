@@ -1,0 +1,8 @@
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dnscrypt-proxy \
+         --resolver-name=cs-uswest \
+          --user=nobody \
+          --edns-payload-size=4096
+Restart=on-failure
+RestartSec=10
