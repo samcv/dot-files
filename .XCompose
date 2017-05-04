@@ -9,7 +9,7 @@ include "%L"
 # emit('<0>', 0x24EA, "ZERO")
 # for num, word in zip(range(1, 21), words):
 #     emit(' '.join("<%s>" % char for char in str(num)), 0x245f + num, word)
-
+# Need ṛ
 ## Samantha's Custom
 <Multi_key> <backslash> <n>         : "␤"  U2424  # SYMBOL FOR NEWLINE
 <Multi_key> <backslash> <t>         : "↹"   U21B9  # LEFTWARDS ARROW TO BAR OVER RIGHTWARDS ARROW TO BAR
@@ -40,6 +40,8 @@ include "%L"
 <Multi_key> <M> <period>          : "Ṃ" U1E42 # LATIN CAPITAL LETTER M WITH DOT BELOW
 <Multi_key> <m> <period>          : "ṃ" U1E43 # LATIN SMALL LETTER M WITH DOT BELOW
 
+<Multi_key> <s> <period>          : "ṣ" U1E63 # LATIN SMALL LETTER S WITH DOT BELOW
+<Multi_key> <s> <period>          : "Ṣ" U1E62 # LATIN CAPITAL LETTER S WITH DOT BELOW
 
 # My custom emoticons
 <Multi_key> <Multi_key> <T> <U> <X> : "🐧" U1F427 # PENGUIN

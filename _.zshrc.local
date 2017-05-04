@@ -7,6 +7,10 @@
 # Environment Variables
 HISTSIZE=1000000000000000
 SAVEHIST=1000000000000000
+setopt    appendhistory     # Append history to the history file (no overwriting)
+setopt    sharehistory      # Share history across terminals
+setopt    incappendhistory  # Immediately append to the history file, not just when a term is killed
+HISTDUP=erase               # Erase duplicates in the history file
 # Commands
 stty sane
 # zsh options
@@ -32,6 +36,7 @@ alias gitpl='git pull'
 alias gitrt='git reset'
 alias gitrb='git rebase'
 alias gitrm='git remove'
+alias gitre='git remote'
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'
@@ -64,10 +69,15 @@ alias compose-edit='sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose'
 alias pg='pgrep'
 alias pg-a='pgrep -a'
 alias wcc="pee 'wc -l' 'cat'"
-# Reload udev rules
+# Reload udev rules /* this may or may not actually work */
 alias udev-r='sudo udevadm trigger'
+# load the profile
 if [ -f ~/.profile ]; then
 	source ~/.profile
+fi
+cmd_exists () { command -v jekyll 2>/dev/null ; }
+if [ "$(cmd_exists jekyll)" ]; then
+	alias jekyll='bundle exec jekyll'
 fi
 
 
