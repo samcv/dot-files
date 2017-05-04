@@ -11,8 +11,8 @@ cp ~/bin/dotgit.sh "${FOLDER}"
 
 echo "Copying user dot files to ${FOLDER}"
 # Copy anything in .zshrc.local that doesn't have a space in front of it
-sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/_.zshrc.local"
-cp ~/.xinitrc "${FOLDER}/_.xinitrc"
+sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/.zshrc.local"
+cp ~/.xinitrc "${FOLDER}/.xinitrc"
 cp ~/.XCompose "${FOLDER}/.XCompose"
 cp ~/.Xresources "${FOLDER}/.Xresources"
 cp ~/.vimrc "${FOLDER}/.vimrc"
