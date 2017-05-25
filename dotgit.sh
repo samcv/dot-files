@@ -19,6 +19,7 @@ cp ~/.vimrc "${FOLDER}/.vimrc"
 cp ~/.profile "${FOLDER}/.profile"
 cp ~/.perlcriticrc "${FOLDER}/.perlcriticrc"
 cp ~/.gitconfig "${FOLDER}/.gitconfig"
+cp -R ~/.profile.d/ "${FOLDER}/"
 
 cp ~/git/UCD-samcv/.nav-marker-rules "${FOLDER}/.nav-marker-rules"
 

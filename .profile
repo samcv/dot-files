@@ -42,3 +42,20 @@ fi
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+
+if [ $PROFILE_D_LOADED ]; then printf "Profile already loaded. Reloading though.\n"; fi
+PATH="$PATH:$HOME/.perl6/bin"
+export PATH
+echo $0
+if [[ -d $HOME/.profile.d ]]; then
+  for i in $HOME/.profile.d/*.sh; do
+    if [ -r $i ]; then
+      source $i
+    fi
+  done
+  unset i
+  PROFILE_D_LOADED=1
+  export PROFILE_D_LOADED
+fi
+TEST_JOBS=$(expr 1 + $(nproc))
+export TEST_JOBS

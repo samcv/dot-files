@@ -36,7 +36,8 @@ alias gitpl='git pull'
 alias gitrt='git reset'
 alias gitrb='git rebase'
 alias gitrm='git remove'
-alias gitre='git remote'
+alias gitre='git remote -v'
+alias gitmv='git mv'
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'
@@ -61,13 +62,12 @@ alias prove6='prove -e perl6'
 alias make="/usr/bin/make -j $TEST_JOBS"
 alias p='perl'
 alias perl5='perl'
-alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias sctl='systemctl'
 alias e='exit'
-alias update='sudo pacman -Syuu && pacaur -Suua'
+source "$HOME/profile.d/aliases.arch.sh"
 alias compose-edit='sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose'
 alias pg='pgrep'
-alias pg-a='pgrep -a'
+alias pga='pgrep -a'
 alias wcc="pee 'wc -l' 'cat'"
 # Reload udev rules /* this may or may not actually work */
 alias udev-r='sudo udevadm trigger'
