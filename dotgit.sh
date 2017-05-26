@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 # Script to copy my dotfiles and other configuration files
 
-FOLDER=~/dotgit
-cd ~/dotgit || exit
-FOLDER=$(pwd)
+FOLDER="$HOME/git/samcv/dot-files"
 mkdir -p "${FOLDER}"
+cd "$FOLDER" || exit
+FOLDER="$(pwd)"
 
 echo "Coping this script to ${FOLDER}"
 cp ~/bin/dotgit.sh "${FOLDER}"

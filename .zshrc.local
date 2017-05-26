@@ -64,7 +64,7 @@ alias p='perl'
 alias perl5='perl'
 alias sctl='systemctl'
 alias e='exit'
-source "$HOME/profile.d/aliases.arch.sh"
+source "$HOME/.profile.d/aliases.arch.sh"
 alias compose-edit='sudo vim /usr/share/X11/locale/en_US.UTF-8/Compose'
 alias pg='pgrep'
 alias pga='pgrep -a'

@@ -3,6 +3,7 @@ alias localnet="ip addr show | grep -E 'inet[^6]' | grep global | sed -E -e 's/\
 alias e='exit'
 
 # Aliases
+alias dir='find . -type d -maxdepth'
 alias hgrep='cat ~/.zsh_history | grep'
 alias s='sudo'
 alias a='atom-beta'
@@ -24,6 +25,7 @@ alias gitrb='git rebase'
 alias gitrm='git remove'
 alias gitre='git remote -v'
 alias gitmv='git mv'
+alias gitp-all="git remote -v | cut -f 1 | sort -u | xargs -I '{}' git push -v '{}'"
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'

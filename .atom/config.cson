@@ -1,7 +1,8 @@
 "*":
   "autocomplete-plus":
-    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    confirmCompletion: "tab"
   "bracket-matcher":
+    autocompleteBrackets: false
     autocompleteCharacters: [
       "()"
       "[]"
@@ -16,19 +17,100 @@
       "<>"
     ]
   core:
+    autoHideMenuBar: true
     disabledPackages: [
+      "language-ruby-on-rails"
+      "vim-mode"
+      "open-on-github"
+      "language-chef"
+      "language-gfm"
+      "markdown-preview-plus"
+      "markdown-scroll-sync"
+      "linter-perlcritic"
+      "linter-perl"
+      "perltidy"
+      "build"
+      "busy"
+      "hyperclick"
+      "json-colorer"
+      "linter-clang"
       "whitespace"
+      "file-types"
+      "language-latex"
+      "linter"
+      "linter-shellcheck"
       "revert-buffer"
+      "refactor"
+      "terminal-plus"
+      "split-diff"
+      "language-perl"
+      "github"
     ]
-    telemetryConsent: "limited"
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
   editor:
+    backUpBeforeSaving: true
     fontFamily: "Fira Code"
+    lineHeight: 1.1
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
     showInvisibles: true
+    tabLength: 4
   "exception-reporting":
-    userId: "d6167cee-96fe-4b43-b538-c820a24cc9e9"
-  "linter-ui-default":
-    panelHeight: 118
-  "one-dark-ui": {}
+    userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
+  "file-types":
+    "\\.p6$": "source.perl6fe"
+  linter:
+    errorPanelHeight: 22
+    ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
+    ignoreVCSIgnoredFiles: false
+  "linter-perl":
+    executablePath: "/usr/bin/perl"
+  "linter-perlcritic":
+    executablePath: "/usr/bin/vendor_perl/perlcritic"
+  "linter-shellcheck":
+    enableNotice: true
+  perldoc:
+    binary: "/usr/bin/core_perl/pod2html"
+  perltidy:
+    binary: "/usr/bin/vendor_perl/perltidy"
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "comment.block.delimited.perl6"
+    ]
+  "split-diff": {}
+  "terminal-plus":
+    core:
+      autoRunCommand: "zsh"
+    toggles:
+      autoClose: true
+  "tree-view":
+    showOnRightSide: true
   welcome:
     showOnStartup: false
+".md.text":
+  editor:
+    tabLength: 4
+".meta-info.source":
+  editor:
+    tabLength: 4
+".perl6fe.quoting.source":
+  editor:
+    preferredLineLength: 80
+    tabLength: 4
+".perl6fe.regexp.source":
+  editor:
+    preferredLineLength: 80
+    tabLength: 4
+".perl6fe.source":
+  editor:
+    tabLength: 4
