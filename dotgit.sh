@@ -1,6 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # Script to copy my dotfiles and other configuration files
-
+move_folder_contents_to () {
+    if [[ -d "$1" && -d "$2" ]]; then
+        find "$1" -maxdepth 1 -mindepth 1 -exec echo cp {} "$2" \;
+        find "$1" -maxdepth 1 -mindepth 1 -exec cp {} "$2" \;
+    else
+        printf "Either ‘%s’ or ‘%s’ do not exist or aren't directories\n" "$1" "$2"
+    fi
+}
 FOLDER="$HOME/git/samcv/dot-files"
 mkdir -p "${FOLDER}"
 cd "$FOLDER" || exit
@@ -19,7 +26,7 @@ cp ~/.vimrc "${FOLDER}/.vimrc"
 cp ~/.profile "${FOLDER}/.profile"
 cp ~/.perlcriticrc "${FOLDER}/.perlcriticrc"
 cp ~/.gitconfig "${FOLDER}/.gitconfig"
-cp -R ~/.profile.d/ "${FOLDER}/"
+move_folder_contents_to "$HOME/.profile.d/" "${FOLDER}/"
 
 cp ~/git/UCD-samcv/.nav-marker-rules "${FOLDER}/.nav-marker-rules"
 
