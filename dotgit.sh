@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # Script to copy my dotfiles and other configuration files
 move_folder_contents_to () {
     if [[ -d "$1" && -d "$2" ]]; then
-        find "$1" -maxdepth 1 -mindepth 1 -exec echo cp {} "$2" \;
-        find "$1" -maxdepth 1 -mindepth 1 -exec cp {} "$2" \;
+        find "$1" -maxdepth 1 -mindepth 1 -exec echo cp -r {} "$2" \;
+        find "$1" -maxdepth 1 -mindepth 1 -exec cp -r {} "$2" \;
     else
         printf "Either ‘%s’ or ‘%s’ do not exist or aren't directories\n" "$1" "$2"
     fi
@@ -13,23 +13,34 @@ mkdir -p "${FOLDER}"
 cd "$FOLDER" || exit
 FOLDER="$(pwd)"
 
-echo "Coping this script to ${FOLDER}"
-cp ~/bin/dotgit.sh "${FOLDER}"
-
 echo "Copying user dot files to ${FOLDER}"
 # Copy anything in .zshrc.local that doesn't have a space in front of it
-sed -e 's/^ .*//' ~/.zshrc.local > "${FOLDER}/.zshrc.local"
-cp ~/.xinitrc "${FOLDER}/.xinitrc"
-cp ~/.XCompose "${FOLDER}/.XCompose"
-cp ~/.Xresources "${FOLDER}/.Xresources"
-cp ~/.vimrc "${FOLDER}/.vimrc"
-cp ~/.profile "${FOLDER}/.profile"
-cp ~/.perlcriticrc "${FOLDER}/.perlcriticrc"
-cp ~/.gitconfig "${FOLDER}/.gitconfig"
+sed -e 's/^ .*//' "$HOME/.zshrc.local" > "${FOLDER}/.zshrc.local"
 move_folder_contents_to "$HOME/.profile.d/" "${FOLDER}/"
-
-cp ~/git/UCD-samcv/.nav-marker-rules "${FOLDER}/.nav-marker-rules"
-
+get_file_folder () {
+    readlink -f "$(dirname "$1")"
+}
+get_postfix () {
+    get_file_folder "$1" | sed -e "s|${FOLDER}||g"
+}
+get_new_folder () {
+    printf "%s%s" "${FOLDER}" "$(get_postfix "$1")"
+}
+array=( .Xresources .XCompose .xinitrc .gitconfig .zpreztorc .zshrc.local .zshrc .vimrc
+        .profile .perlcriticrc .atom/keymap.cson
+        git/samcv/UCD/.nav-marker-rules
+)
+for i in $array; do
+    file="$HOME/$i"
+    copy_to=$(get_new_folder "$i")
+    if [[ -f "$file" && -d "$copy_to" ]]; then
+        cp "$file" "$(get_new_folder "$i")"
+    elif [[ ! -f "$file" ]]; then
+        printf "Can't find file %s\n" "$file"
+    elif [[ ! -d "$copy_to" ]]; then
+        printf "Can't find copy-to folder: '%s'\n" "$copy_to"
+    fi
+done
 echo "Copying includes"
 mkdir -p "${FOLDER}/includes/st"
 cp ~/svn/community/st/trunk/config.h "${FOLDER}/includes/st"
