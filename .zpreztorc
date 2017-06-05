@@ -189,3 +189,6 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
+
+# Don't warn before overwriting things with a pipe
+setopt clobber
