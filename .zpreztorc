@@ -31,6 +31,7 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'git' \
   'utility' \
   'completion' \
   'syntax-highlighting' \
@@ -40,6 +41,18 @@ zstyle ':prezto:load' pmodule \
 #
 # Autosuggestions
 #
+local function cmd-in-path () {
+    command -v $1 > /dev/null 2>&1
+}
+if cmd-in-path _task ; then
+    zstyle ':completion:*:*:task:*' verbose yes
+    zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
+
+    zstyle ':completion:*:*:task:*' group-name ''
+
+    alias t=task
+    compdef _task t=task
+fi
 
 # Set the query found color.
 #zxstyle ':prezto:module:autosuggestions:color' found ''
@@ -143,20 +156,21 @@ zstyle ':prezto:module:syntax-highlighting' color 'yes'
 zstyle ':prezto:module:syntax-highlighting' highlighters \
      'main' \
     'brackets' \
-    'pattern'
+    'pattern' \
     'line' \
     'cursor' \
     'root'
 #
 # Set syntax highlighting styles.
-zstyle ':prezto:module:syntax-highlighting' styles \
- #'builtin' 'bg=blue' \
-  'command' 'bg=blue'
+#zstyle ':prezto:module:syntax-highlighting' styles \
+#  'command' 'bg=blue'
+#'builtin' 'bg=blue' \
  # 'function' 'bg=blucate'
 #
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
-   'rm*-rf*' 'fg=white,bold,bg=red'
+   'rm*-rf*' 'fg=white,bold,bg=red' \
+   'sudo' 'bold,bg=green'
 
 #
 # Terminal
@@ -175,6 +189,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 
 #
+
 # Tmux
 #
 

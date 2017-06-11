@@ -20,7 +20,7 @@ xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
 
 [alias]
 	log-merge = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P $1))..$1 --graph --pretty=oneline --abbrev-commit --boundary
-	b  = branch
+	b  = branch --sort='committerdate' --format=' %(authordate:relative)%09%(refname:short)' 
 	a  = add
 	c  = commit
 	l  = log
