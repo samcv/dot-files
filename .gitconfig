@@ -33,3 +33,6 @@ xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
 	rb = rebase
 	d  = diff
 	wdiff = diff --color-words
+[status]
+	submoduleSummary = 1
+	color = always

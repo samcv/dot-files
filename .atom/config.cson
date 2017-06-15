@@ -38,13 +38,13 @@
       "file-types"
       "language-latex"
       "linter"
-      "linter-shellcheck"
       "revert-buffer"
       "refactor"
       "terminal-plus"
       "split-diff"
       "language-perl"
       "github"
+      "editor-settings"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -55,6 +55,7 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "Fira Code"
+    fontSize: 17
     lineHeight: 1.1
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
@@ -64,6 +65,9 @@
     userId: "c2bb7e60-54e4-0192-91e8-e992f51407bc"
   "file-types":
     "\\.p6$": "source.perl6fe"
+  fonts:
+    fontFamily: "FiraCode"
+    preview: "The Quick brown fox { 0 !== \"O\" } @  −- –−-4-7"
   linter:
     errorPanelHeight: 22
     ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
@@ -74,6 +78,10 @@
     executablePath: "/usr/bin/vendor_perl/perlcritic"
   "linter-shellcheck":
     enableNotice: true
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
   perldoc:
     binary: "/usr/bin/core_perl/pod2html"
   perltidy:
@@ -114,3 +122,6 @@
 ".perl6fe.source":
   editor:
     tabLength: 4
+".shell.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…"

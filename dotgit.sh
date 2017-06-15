@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 # Script to copy my dotfiles and other configuration files
 move_folder_contents_to () {
+    if [[ ! -e "$2" ]]; then
+        mkdir -p "$copy_to"
+    fi
     if [[ -d "$1" && -d "$2" ]]; then
         find "$1" -maxdepth 1 -mindepth 1 -exec echo cp -r {} "$2" \;
         find "$1" -maxdepth 1 -mindepth 1 -exec cp -r {} "$2" \;
@@ -26,10 +29,13 @@ get_postfix () {
 get_new_folder () {
     printf "%s%s" "${FOLDER}" "$(get_postfix "$1")"
 }
+get_new_folder_folder () {
+    printf "%s/%s" "${FOLDER}" "$1"
+}
 home_array=(
     .Xresources .XCompose .xinitrc .gitconfig .zpreztorc .zshrc.local .zshrc .vimrc
     .profile .perlcriticrc
-
+    bin/gitstatus-reverse.p6
     .atom/keymap.cson .atom/keymap.cson .atom/styles.less
 
     .config/mpd/mpd.conf .config/chromium-flags.conf
@@ -37,12 +43,21 @@ home_array=(
     git/samcv/UCD/.nav-marker-rules
 
     svn/community/st/trunk/config.h
-    /bin/kwrite
+    bin/kwrite
+
+    .config/plasma-workspace/env/
 )
 for i in $home_array; do
     file="$HOME/$i"
     copy_to=$(get_new_folder "$i")
-    if [[ -f "$file" && -d "$copy_to" ]]; then
+    if [[ -d "$file" ]]; then
+        copy_to="$(get_new_folder_folder "$i")"
+        if [[ ! -d "$file" ]]; then
+            mkdir -p "$copy_to"
+        fi
+        move_folder_contents_to "$file" "$copy_to"
+        exit
+    elif [[ -f "$file" && -d "$copy_to" ]]; then
         cp "$file" "$(get_new_folder "$i")"
     elif [[ ! -f "$file" ]]; then
         printf "Can't find file %s\n" "$file"
