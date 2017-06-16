@@ -6,24 +6,8 @@
 #
 #samcv_debug=1
 local filename="$0"
-command debug_filename () {
-    if [[ "$samcv_debug" ]]; then echo "loading $filename"; fi;
-}
 debug_filename
-function add_array_to_path () {
-    local array_name=$1
-    for i in ${(P)${array_name}}; do
-        if [[ -e "$i" ]]; then
-            if [[ "$PATH" =~ "$i" ]];   then
-                echo "You're trying to add $i to the path again!"
-            fi
-            PATH="$i:$PATH"
-        elif [[ "$samcv_debug" ]]; then
-            echo "Can't find $i in file $filename"
-        fi
-    done
-    #echo "first array element is: " ${(P)${array_name}[1]}
-}
+
 # Environment Variables
 # ZSH options
 HISTSIZE=1000000000000000
@@ -50,7 +34,6 @@ for i in $to_load; do
         printf "Could not find '%s'\n" "$i"
     fi
 done
-cmd_exists () { command -v $1 2>/dev/null ; }
 #bindkey '\e[A' history-search-backward
 #bindkey '\e[B' history-search-forward
 

@@ -102,7 +102,7 @@
     toggles:
       autoClose: true
   "tree-view":
-    showOnRightSide: true
+    autoReveal: true
   welcome:
     showOnStartup: false
 ".md.text":

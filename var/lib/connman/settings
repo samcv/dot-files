@@ -2,7 +2,7 @@
 IPv6.privacy=prefered
 AllowHostnameUpdates=false
 AllowDomainnameUpdates=false
-Nameservers=127.0.0.1
+#Nameservers=127.0.0.1
 OfflineMode=false
 
 [Bluetooth]

@@ -4,7 +4,7 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-
+source "$HOME/.functions.sh"
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
