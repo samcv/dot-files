@@ -1,0 +1,180 @@
+: 1497762832:0;a /home/samantha/.config/zsh/.zshrc
+: 1497762885:0;ls | g -i zsh
+: 1497762890:0;ls -a | g -i zsh
+: 1497762898:0;ls ~/.config/zsh
+: 1497762922:0;ls -a ~/.config/zsh
+: 1497762932:0;less ~/.config/zsh/.zhistory
+: 1497762973:0;ls .zfunctions
+: 1497763073:0;less ~/.profile
+: 1497763085:0;echo $samcv_debug
+: 1497763137:0;rg "You're trying to add" ~/.profile
+: 1497763139:0;rg "You're trying to add" ~/.profile.d
+: 1497763144:0;rg "You're trying to add" ~/.config/zsh
+: 1497763152:0;rg -u "You're trying to add" ~/.config/zsh
+: 1497763163:0;rg -uL "You're trying to add" ~/.config/zsh
+: 1497763167:0;rg -uL "You're trying to add" ~/.config/zsh --debug
+: 1497763230:0;cd ~/.profile
+: 1497763242:0;rg "You're trying to add"
+: 1497763248:0;less functions.sh
+: 1497763253:0;cd ~/
+: 1497763256:0;a ~/.functions.sh
+: 1497763305:0;a ~/.config/plasma-workspace/env/path.sh
+: 1497763365:0;ls ~/.config/zsh -a
+: 1497763479:0;ls ~/.atom/packages
+: 1497763497:0;rm  ~/.atom/packages/language-perl2
+: 1497763506:0;rm  ~/.atom/packages/language-perl6
+: 1497763552:0;rg 'Profile already loaded' .profile.d ~/.config/zsh
+: 1497763557:0;rg 'Profile already loaded' .profile.d ~/.config/zsh ~/.profile
+: 1497763706:0;cd ~/.profile.d
+: 1497763714:0;mv functions.sh 00-functions.sh
+: 1497763784:0;htop
+: 1497763878:0;a /home/samantha/.config/zsh/.zshrc.local
+: 1497763914:0;a ~/.config/zsh/.zshrc
+: 1497763944:0;samcv_debug=1 zsh
+: 1497764007:0;a /home/samantha/.profile.d/profile.sh
+: 1497764155:0;a /home/samantha/.profile
+: 1497764272:0;setopt VERBOSE
+: 1497764283:0;zsh ~/.zshenv
+: 1497764292:0;chmod +x ~/.zshenv
+: 1497764318:0;a /home/samantha/.config/zsh/.zprezto/init.zsh
+: 1497764363:0;clear
+: 1497764372:0;autoload
+: 1497764423:0;print
+: 1497764428:0;which print
+: 1497764437:0;man print
+: 1497764439:0;print -h
+: 1497764442:0;print --help
+: 1497764445:0;print 'hi'
+: 1497764447:0;print 'hi\n'
+: 1497764452:0;print 'h%si\n' abc
+: 1497764481:0;~/.zshenv
+: 1497764494:0;zsh --version
+: 1497764513:0;cd ~/.config/zsh
+: 1497764521:0;echo $ZSHHOME
+: 1497764543:0;ls -
+: 1497764604:0;ls .zprezto/runcoms
+: 1497764629:0;for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do \\
+echo "$rcfile" \\
+done\
+\
+;\
+;\
+;
+: 1497764653:0;for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do \
+echo "rcfile"\
+done
+: 1497764682:0;for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do\
+echo "$rcfile" "${ZDOTDIR:-$HOME}/.$rcfile:t}"\
+done
+: 1497764700:0;mkdir bak
+: 1497764706:0;mv .zpreztorc bak
+: 1497764720:0;mv .zshrc bak
+: 1497764732:0;ls .zshenv ls /home/samantha/.config/zsh/.zprezto/runcoms
+: 1497764774:0;mv .zshenv bak
+: 1497764782:0;ls -a .zshenv ls /home/samantha/.config/zsh/.zprezto/runcoms
+: 1497764790:0;ls -a /home/samantha/.config/zsh/.zprezto/runcoms
+: 1497764805:0;setopt EXTENDED_GLOB\
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do\
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"\
+done
+: 1497764830:0;atom /home/samantha/.config/zsh/.zshrc
+: 1497764861:0;cd ~
+: 1497764862:0;ls -lh | grep -i zsh
+: 1497764866:0;ls -lha | grep -i zsh
+: 1497764871:0;less ~/.zshenv
+: 1497764882:0;echo $ZDOTDIR
+: 1497764906:0;e
+: 1497764911:0;cd $ZDOTDIR
+: 1497764915:0;ls -a
+: 1497764919:0;less .zshenv
+: 1497764955:0;less /home/samantha/.config/zsh/.zshrc
+: 1497764995:0;less .zshrc
+: 1497765004:0;less .zprofile
+: 1497765054:0;less /usr/bin/bash
+: 1497765058:0;less /bin/bash
+: 1497765068:0;less
+: 1497765072:0;ls -lha
+: 1497765078:0;which a
+: 1497765093:0;diff bak/.zshrc .zshrc
+: 1497765101:0;diff -aur bak/.zshrc .zshrc
+: 1497765103:0;which d
+: 1497765131:0;vim .zshrc
+: 1497765144:0;ls
+: 1497765146:0;ls bak
+: 1497765148:0;ls -lh bak
+: 1497765152:0;ls -lha bak
+: 1497765154:0;which l
+: 1497765157:0;l bak
+: 1497765199:0;diff -aur .zshrc ./bak/.zshrc
+: 1497765230:0;vim .zshrc.local
+: 1497765264:0;ls -lh
+: 1497765268:0;less .zshrc.local
+: 1497765279:0;a .zshrc.local
+: 1497765313:0;zsh
+: 1497765318:0;a ~/.profile
+: 1497765358:0;exit
+: 1497765366:0;echo $samcv_debug
+: 1497765380:0;if [[ "$samcv_debug" ]]; echo hi ; fi
+: 1497765383:0;if [[ "$samcv_debug" ]]; then echo hi ; fi
+: 1497765446:0;a ~/.profile
+: 1497765468:0;a ~/.functions.sh
+: 1497765477:0;rm ~/.functions.sh
+: 1497765484:0;a ~/.profile.d/00-functions.sh
+: 1497765526:0;a ~/.profile
+: 1497765553:0;a .zshrc.local
+: 1497765592:0;which parse_file
+: 1497765872:0;[[ "hi" ]] && echo hi
+: 1497765876:0;[[ "" ]] && echo hi
+: 1497765927:0;rm ~/.profile
+: 1497765934:0;which g
+: 1497765936:0;which git
+: 1497765938:0;which gits
+: 1497765956:0;a ~/.config/plasma-workspace/env/path.sh
+: 1497765981:0;ls ~/.profile.d
+: 1497766005:0;cd ~/git/samcv/dot-files
+: 1497766006:0;ls
+: 1497766009:0;a dotgit.sh
+: 1497766027:0;./dotgit.sh
+: 1497766049:0;ls .config/zsh
+: 1497766051:0;ls .config/zsh -a
+: 1497766085:0;touch ~/.profile.d/fake
+: 1497766087:0;./dotgit.sh
+: 1497766091:0;ls .profile.d
+: 1497766101:0;./dotgit.sh
+: 1497766105:0;ls .profile.d
+: 1497766114:0;rm ~/.profile.d/fake
+: 1497766118:0;gits
+: 1497766123:0;gita .profile.d
+: 1497766128:0;gita .config/zsh
+: 1497766130:0;gitc
+: 1497766147:0;ls -lh
+: 1497766156:0;gits
+: 1497766167:0;rm 00-functions.sh
+: 1497766170:0;rm fake
+: 1497766172:0;ls
+: 1497766175:0;gits
+: 1497766180:0;rm aliases.sh
+: 1497766187:0;rm functions.sh im_module-path.sh
+: 1497766195:0;rm im_module.sh
+: 1497766197:0;gits
+: 1497766202:0;rm profile.sh
+: 1497766204:0;rm perl6-path.sh
+: 1497766207:0;./dotgit.sh
+: 1497766208:0;gits
+: 1497766252:0;rm perl6-path.sh
+: 1497766257:0;./dotgit.sh
+: 1497766259:0;gits
+: 1497766268:0;rm 00-functions.sh aliases.sh im_module-path.sh profile.sh
+: 1497766271:0;gits
+: 1497766289:0;ls -lha
+: 1497766297:0;less .zshrc
+: 1497766304:0;less .config/zsh/.zshrc
+: 1497766308:0;git rm .zshrc
+: 1497766344:0;ls -lh
+: 1497766348:0;ls -lha
+: 1497766351:0;gitd
+: 1497766353:0;gita -p
+: 1497766356:0;gits
+: 1497766358:0;gita -p
+: 1497766389:0;less ~/.config/zsh/.zhistory
+: 1497766415:0;mv ~/.config/zsh/.zhistory ~/.config/zsh/.zhistory.bak
