@@ -37,7 +37,6 @@
       "whitespace"
       "file-types"
       "language-latex"
-      "linter"
       "revert-buffer"
       "refactor"
       "terminal-plus"
@@ -45,6 +44,12 @@
       "language-perl"
       "github"
       "editor-settings"
+      "linter"
+      "linter-ui-default"
+      "linter-shellcheck"
+      "linter-js-yaml"
+      "minimap"
+      "minimap-find-and-replace"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -55,7 +60,7 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "Fira Code"
-    fontSize: 17
+    fontSize: 20
     lineHeight: 1.1
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
     showIndentGuide: true
@@ -68,16 +73,15 @@
   fonts:
     fontFamily: "FiraCode"
     preview: "The Quick brown fox { 0 !== \"O\" } @  −- –−-4-7"
-  linter:
-    errorPanelHeight: 22
-    ignoreMatchedFiles: "/**/*{ebuild,KGBUILD}"
-    ignoreVCSIgnoredFiles: false
+  linter: {}
   "linter-perl":
     executablePath: "/usr/bin/perl"
   "linter-perlcritic":
     executablePath: "/usr/bin/vendor_perl/perlcritic"
   "linter-shellcheck":
     enableNotice: true
+  "linter-ui-default":
+    panelHeight: 61
   minimap:
     plugins:
       "find-and-replace": true
