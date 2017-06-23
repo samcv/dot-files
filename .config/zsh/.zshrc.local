@@ -14,6 +14,8 @@ setopt    incappendhistory  # Immediately append to the history file, not just w
 HISTDUP=erase               # Erase duplicates in the history file
 # Don't warn before overwriting things with a pipe
 setopt clobber
+# Set time to enter vi mode 0.1 seconds
+export KEYTIMEOUT=1
 # Commands
 stty sane
 # zsh options
@@ -22,6 +24,8 @@ setopt hist_ignore_space
 # autocorrection set to dvorak
 setopt dvorak
 # load the profiles
+TEST_JOBS=$((1 + $(nproc)))
+export TEST_JOBS
 ###########
 [[ "$PROFILE_D_LOADED" && "$samcv_debug" ]] && printf "Profile already loaded. Reloading though.\n" 1>&2
 if [[ -d "$HOME/.profile.d" ]]; then
@@ -56,8 +60,6 @@ add_array_to_path 'diff_path'
 
 distro_src_file="/home/samantha/.profile.d/distro/alias-$(uname -n).sh"
 parse_file "$distro_src_file" "source"
-TEST_JOBS=$((1 + $(nproc)))
-export TEST_JOBS
 export PATH
 export PROFILE_D_LOADED=1
 
