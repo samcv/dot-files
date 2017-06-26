@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
 # Script to copy my dotfiles and other configuration files
+#setopt verbose xtrace
 move_folder_contents_to () {
     [[ $2 ]] && copy_to="$2" || exit $LINENO
-    if [[ ! -e "$2" ]]; then
+    if [[ ! -e "$copy_to" && ! -d "$copy_to" ]]; then
         mkdir -p "$copy_to"
     fi
     if [[ -d $1 && -d $2 ]]; then
@@ -53,10 +54,10 @@ home_array=(
     .Xresources .XCompose .xinitrc .gitconfig .zpreztorc .zshrc.local .zshrc .vimrc
     .profile .perlcriticrc
     bin/gitstatus-reverse.p6
-    .atom/keymap.cson .atom/keymap.cson .atom/styles.less
+    .atom/keymap.cson .atom/keymap.cson .atom/styles.less .atom/.apmrc
 
     .config/mpd/ .config/chromium-flags.conf
-
+    .zshenv
     git/samcv/UCD/.nav-marker-rules
 
     svn/community/st/trunk/config.h
@@ -65,6 +66,7 @@ home_array=(
     .config/plasma-workspace/env/
     .config/zsh
     .profile.d
+    .local/share/zsh
 )
 system=(
     /etc/dnsmasq.conf
@@ -111,21 +113,6 @@ copy_to_git_repo_globbed () {
     done
 
 }
-echo '#############'
 for i in $system_globbed; do
-    #echo $i
     copy_to_git_repo_globbed "$i"
 done
-exit
-
-
-echo "Copying /usr/lib/systemd/system files" #
-mkdir -p "${FOLDER}/usr/lib/systemd/system" #
-
-
-echo "Copying /usr/share/devtools files to ${FOLDER}/usr/share/" #
-mkdir -p "${FOLDER}/usr/share/devtools/" #
-cp /usr/share/devtools/pacman-extra.conf "${FOLDER}/usr/share/devtools/" #
-
-mkdir -p "$FOLDER/bin" #
-cp "$HOME/bin/kwrite" "$FOLDER/bin" #

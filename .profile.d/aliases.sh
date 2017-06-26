@@ -1,7 +1,8 @@
 local filename="$0"
 debug_filename
 alias localnet="ip addr show | grep -E 'inet[^6]' | grep global | sed -E -e 's/\s+/ /g' -e 's/^\s*//' | cut -d ' ' -f 2"
-alias printerscan='nmap -p 9100,515,631 $(localnet) -oX printers.xml'
+alias printerscan='nmap -p 9100,515,631 $(localnet)'
+alias printerscan-xml='printerscan -oX printers.xml'
 alias e='exit'
 # Aliases
 alias hgrep='cat ~/.zsh_history | grep'
@@ -23,8 +24,15 @@ alias clip='xclip -selection clipboard'
 alias stripcolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" '
 # grep
 alias g='grep'
+alias ge='grep -E'
+alias gi='grep -i'
+alias gei='grep -Ei'
 # git aliases
-alias gitb='git b'
+gitb() {
+     git branch --sort=committerdate \
+         --format='%(if)%(HEAD)%(then)%(color:blue)%(end) %(authordate:relative)%09%(if)%(HEAD)%(then)%(color:green)%(refname:short) *%(else)%(refname:short)%(end)' \
+         "$@"
+}
 alias gitsub='git submodule'
 alias gita='git add'
 alias gitc='git commit'
@@ -32,6 +40,36 @@ alias gitl='git log --abbrev-commit --decorate --stat'
 alias gitco='git checkout'
 alias gitm='git merge'
 alias gitf='git fetch'
+function fake-tty () {
+    script -qc "$(printf "%q " "$@")";
+}
+function gitshort () {
+    if [[ "$1" =~ '..' ]]; then
+        git log "$1" --no-merges --oneline ;
+    else
+        git log "$1..master" --no-merges --oneline ;
+    fi
+}
+function gcd () {
+    local dir=$(find -O3 ~/git -maxdepth 2 -type d -name "$1" 2> /dev/null)
+    if [[ "$dir" ]]; then
+        cd -- "$dir"
+    else
+        printf "Could not find $1 in ~/git\n"
+        return 1
+    fi
+}
+function fuzzy () {
+    [[ "$1" =~ "h" ]] && printf "Usage: toggles HISTORY_SUBSTRING_SEARCH_FUZZY on and off\n" && return 0
+    if [[ "$HISTORY_SUBSTRING_SEARCH_FUZZY" ]]
+    then HISTORY_SUBSTRING_SEARCH_FUZZY='' ; echo "Fuzzy substring search off"
+    else;  HISTORY_SUBSTRING_SEARCH_FUZZY=1; echo "Fuzzy substring search on"
+    fi
+}
+function kill-start () {
+    pkill -x "$1"; kstart5 "$@"
+}
+alias gitt="git tag --sort='taggerdate' --format=' %(taggerdate:relative)%09%(refname:short)'"
 #~/bin/gitstatus-reverse.p6
 #alias gits='git status'
 alias gitd='git diff'
@@ -42,13 +80,15 @@ alias gitrb='git rebase'
 alias gitrm='git remove'
 alias gitre='git remote -v'
 alias gitmv='git mv'
-alias gitp-all="git remote -v | cut -f 1 | sort -u | xargs -I '{}' git push -v '{}'"
+function gitp-all {
+    git remote -v | cut -f 1 | sort -u | xargs -I '{}' git push -v '{}' "$@"
+}
 # pulseaudio aliases
 alias pa-k='pulseaudio --kill'
 alias pa-s='pulseaudio --start'
 alias vim-e='vim ~/.vimrc'
 # zsh aliases
-alias zsh-s='source ~/.zshenv'
+alias zsh-s="source '$ZDOTDIR/.zshrc'"
 alias zsh-e='cd ~/.profile.d && atom . ~/.zshrc ~/.zshrc.local ~/.zpreztorc ~/.profile'
 # ruby alias
 if cmd-in-path bundle; then alias be='bundle exec' ; fi
@@ -103,3 +143,6 @@ fi
 # Reload udev rules /* this may or may not actually work */
 alias udev-r='sudo udevadm trigger'
 alias p="pgrep -ai"
+alias screen-unlock="loginctl unlock-sessions"
+alias logout-plasma="qdbus org.kde.ksmserver /KSMServer logout 0 3 3"
+alias addalias='sponge -a "$HOME/.profile.d/aliases.sh"'
