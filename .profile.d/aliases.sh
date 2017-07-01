@@ -22,6 +22,24 @@ alias dedupe='awk '\''!seen[$0]++'\'' '
 alias clip='xclip -selection clipboard'
 # strips ANSI Terminal Color
 alias stripcolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" '
+
+
+function say {
+    printf "%s\n" "$@"
+}
+function note {
+    say "$@" 1>&2
+}
+function lg {
+    [[ "$#" < 1 ]] && note "usage: $0 <directory> <grep args>"; return 1;
+    if [[ "$#" == 1 ]]; then
+        local dir='.'
+    else
+        local dir="${1}"
+        shift
+    fi
+    command ls -lha --color=always "${dir}" | command grep --color=never "$@" ;
+}
 # grep
 alias g='grep'
 alias ge='grep -E'
@@ -29,8 +47,8 @@ alias gi='grep -i'
 alias gei='grep -Ei'
 # git aliases
 gitb() {
-     git branch --sort=committerdate \
-         --format='%(if)%(HEAD)%(then)%(color:blue)%(end) %(authordate:relative)%09%(if)%(HEAD)%(then)%(color:green)%(refname:short) *%(else)%(refname:short)%(end)' \
+     command git branch --sort=committerdate \
+         --format='%(if)%(HEAD)%(then)%(color:blue)%(end) %(authordate:relative)%09%(if)%(HEAD)%(then)%(color:green)%(refname:short) %(color:reset)*%(else)%(refname:short)%(end)' \
          "$@"
 }
 alias gitsub='git submodule'
@@ -53,7 +71,7 @@ function gitshort () {
 function gcd () {
     local dir=$(find -O3 ~/git -maxdepth 2 -type d -name "$1" 2> /dev/null)
     if [[ "$dir" ]]; then
-        cd -- "$dir"
+        cd -- "$dir" || return "$?"
     else
         printf "Could not find $1 in ~/git\n"
         return 1
@@ -146,3 +164,6 @@ alias p="pgrep -ai"
 alias screen-unlock="loginctl unlock-sessions"
 alias logout-plasma="qdbus org.kde.ksmserver /KSMServer logout 0 3 3"
 alias addalias='sponge -a "$HOME/.profile.d/aliases.sh"'
+if [[ "$ZSH_VERSION" ]]; then
+    alias -g to-null='2> /dev/null'
+fi

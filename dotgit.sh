@@ -67,6 +67,7 @@ home_array=(
     .config/zsh
     .profile.d
     .local/share/zsh
+    .config/git/config
 )
 system=(
     /etc/dnsmasq.conf

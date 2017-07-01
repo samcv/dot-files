@@ -15,9 +15,9 @@ HISTDUP=erase               # Erase duplicates in the history file
 # Don't warn before overwriting things with a pipe
 setopt clobber
 # Set time to enter vi mode 0.1 seconds
-export KEYTIMEOUT=1
+#export KEYTIMEOUT=1
 # Commands
-stty sane
+#stty sane
 # zsh options
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -63,6 +63,7 @@ distro_src_file="/home/samantha/.profile.d/distro/alias-$(uname -n).sh"
 parse_file "$distro_src_file" "source"
 export PATH
 export PROFILE_D_LOADED=1
+fpath+=('/home/samantha/.local/share/zsh/completions/')
 
 
 

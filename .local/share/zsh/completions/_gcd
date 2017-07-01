@@ -1,0 +1,10 @@
+#compdef gcd
+function _get-folders () {
+    find -O3 ~/git -maxdepth 2 -type d -printf "%f\n"
+}
+local cmds=(
+    "${(f)$(
+        _get-folders
+    )}"
+)
+_describe -t commands 'command params' cmds
