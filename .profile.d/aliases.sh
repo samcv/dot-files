@@ -23,13 +23,20 @@ alias clip='xclip -selection clipboard'
 # strips ANSI Terminal Color
 alias stripcolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" '
 
-
+alias m='make'
+alias mi='make install'
 function say {
     printf "%s\n" "$@"
 }
 function note {
     say "$@" 1>&2
 }
+function rg-zsh {
+    setopt extendedglob
+       command rg --color always --hidden "$@" "$HOME/.profile.d" ~/.config/zsh/{.^oh-my-zsh,^oh-my-zsh} \
+    |  less
+}
+alias find='noglob find -O3'
 function lg {
     [[ "$#" < 1 ]] && note "usage: $0 <directory> <grep args>"; return 1;
     if [[ "$#" == 1 ]]; then
@@ -112,37 +119,43 @@ alias zsh-e='cd ~/.profile.d && atom . ~/.zshrc ~/.zshrc.local ~/.zpreztorc ~/.p
 if cmd-in-path bundle; then alias be='bundle exec' ; fi
 # misc aliases
 # Perl Aliases
-if cmd-in-path perl6 ; then
-    alias p6='perl6'
-    alias fm='cd ~/git/MoarVM'
-    alias fr='cd ~/git/rakudo'
-    alias fn='cd ~/git/nqp'
-    if cmd-in-path rlwrap ; then
-        local rl_txt='rlwrap '
-    else
-        local rl_txt=''
-    fi
-    alias 6="${rl_txt}perl6"
-    alias 6-m="${rl_txt}perl6-m"
-    alias 6-j='rlwrap perl6-j'
-    alias nqp='rlwrap nqp'
-    alias nqp-j="${rl_txt}nqp-j"
-    alias nqp-m="${rl_txt}nqp-m"
-    alias prove6='prove -e perl6'
-    local gitstatus_reverse="$HOME/bin/gitstatus-reverse.p6"
-    if cmd-in-path "$gitstatus_reverse" ; then
-        alias gits="git status | $gitstatus_reverse"
-    else
-        if cmd-in-path perl6 ; then
-            alias gits='git status | perl6 -e '\''my $out = $*IN.slurp(:close); $out ~~ s/$<untracked>=("Untracked files:".*)//; print $<untracked> ~ $out'
+function {
+    if cmd-in-path perl6 ; then
+        alias p6='perl6'
+        alias fm='cd ~/git/MoarVM'
+        alias fr='cd ~/git/rakudo'
+        alias fn='cd ~/git/nqp'
+        if cmd-in-path rlwrap ; then
+            local rl_txt='rlwrap '
+            alias rlwrap='rlwrap --history-no-dupes 2 --remember'
         else
-            alias gits='git status'
+            local rl_txt=''
         fi
+        alias 6="${rl_txt}perl6"
+        alias 6-m="${rl_txt}perl6-m"
+        alias 6-j='rlwrap perl6-j'
+        alias nqp='rlwrap nqp'
+        alias nqp-j="${rl_txt}nqp-j"
+        alias nqp-m="${rl_txt}nqp-m"
+        alias prove6='prove -e perl6'
+        local gitstatus_reverse="$HOME/bin/gitstatus-reverse.p6"
+        if cmd-in-path "$gitstatus_reverse" ; then
+            function gits {
+                local gitstatus_reverse="$HOME/bin/gitstatus-reverse.p6"
+                git status "$@" | $gitstatus_reverse
+            }
+        else
+            if cmd-in-path perl6 ; then
+                alias gits='git status | perl6 -e '\''my $out = $*IN.slurp(:close); $out ~~ s/$<untracked>=("Untracked files:".*)//; print $<untracked> ~ $out'
+            else
+                alias gits='git status'
+            fi
+        fi
+    else
+        alias gits="git status"
     fi
-else
-    alias gits="git status"
-fi
-alias make="/usr/bin/make -j $TEST_JOBS"
+}
+alias make="/usr/bin/make -j ${TEST_JOBS:-4}"
 alias p='perl'
 alias perl5='perl'
 alias sctl='systemctl'
@@ -165,5 +178,7 @@ alias screen-unlock="loginctl unlock-sessions"
 alias logout-plasma="qdbus org.kde.ksmserver /KSMServer logout 0 3 3"
 alias addalias='sponge -a "$HOME/.profile.d/aliases.sh"'
 if [[ "$ZSH_VERSION" ]]; then
-    alias -g to-null='2> /dev/null'
+    alias -g 2tonull='2> /dev/null'
+    alias -g tonull='&> /dev/null'
 fi
+alias perl6-lldb-m="rlwrap perl6-lldb-m";
