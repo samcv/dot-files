@@ -1,9 +1,9 @@
 filename="$0"
-function debug_filename () {
+function debug_filename {
     if [[ "$samcv_debug" ]]; then echo "loading $filename" 1>&2; fi;
 }
 debug_filename
-function parse_file () {
+function parse_file {
     if [[ -f "$1" ]]; then
         eval "$2" "$1"
     else
@@ -12,7 +12,7 @@ function parse_file () {
         fi
     fi
 }
-function add_array_to_path () {
+function add_array_to_path {
     local array_name="$1"
     local i=''
     for i in ${(P)${array_name}}; do
@@ -27,21 +27,39 @@ function add_array_to_path () {
     done
     #echo "first array element is: " ${(P)${array_name}[1]} 1>&2
 }
-cmd_exists () { command -v "$1" &> /dev/null; }
+function set-cap-sys-admin {
+    function usage {
+        printf "Usage: %s command-name\nSets cap_sys_admin+ep on the program by resolving the path if it's a program\nor setting it if given a path\n" "$0"
+    }
+    if [[ ! "$1" ]]; then; usage; return 1; fi;
+    if [[ -f "$1"  && "$1" = */* ]]; then
+        local path="$1";
+    else
+        local path="$(command -v $1)";
+        if [[ ! "${path}" ]]; then usage; return 1; fi
+    fi
+    echo $path
+    command /usr/bin/sudo setcap cap_sys_admin+ep "${path}"
+}
+function cmd_exists { command -v "$1" &> /dev/null; }
 if cmd_exists kcachegrind; then
     kcachegrind () {
         echo kcachegrind "$@"
         command kcachegrind "$@" &> /dev/null &
     }
 fi
-function zsh-help () {
+function zsh-help {
     function join { # Joins the arguments into a string delimited by $separator
         local separator=$1;
         local arr=$*;
         arr=${arr:${#separator}+1}; # < Line needed so result doesn't start with
         arr=${arr// /$separator};   # a separator.
         <<<$arr
-    } 
+    }
+    local case='-i'
+    local section='zshall'
+    local debug=''
+    local pattern=''
     if [[ $# < 1 || $1 == "--help" ]]; then
         printf "Looks up things in the zsh documentation.\n"
         printf "Press 'n' to search forward 'N' to search backwards for the term.\n"
@@ -49,16 +67,33 @@ function zsh-help () {
         printf "Option --all will seach for the term anywhere, not just at the start of a line.\n"
         return 1
     fi
+    if [[ $1 == '--zsh-help-debug' ]]; then
+        debug=1
+        shift
+    fi
     if [[ $1 == "test" && $# == 1 ]]; then
-        man --pager="less -p'^CONDITIONAL EXPRESSIONS$'" zshall
-        return
+        case=''
+        pattern='^CONDITIONAL EXPRESSIONS$'
+    elif [[ ($1 == "-eq" || $1 == "-ne" || $1 == "-lt" || $1 == "-gt" || $1 == "-le" || $1 == "-ge") && $# == 1 ]]; then
+        case=''
+        pattern="^\s*exp1\s+${1}\s+exp2"
     elif [[ $1 == "--all" ]]; then
         shift
-        local pattern=$(join '\s+' "$@")
-    else
-        local pattern="^\s*$(join '\s+' "$@")"
+        pattern=$(join '\s+' "$@")
     fi
-    man --pager="less -i -p '${pattern}'" zshall
+    # Check ZSHBUILTINS first. If not found there, we will search ZSHALL
+    if [[ $pattern == "" ]]; then
+        section=ZSHBUILTINS
+        pattern="^\s*${1}"
+        if man --pager="less ${case} -p '${pattern}'" "${section}" > /dev/null 2>&1; then
+            true
+        else
+            local section='zshall'
+            pattern="^\s*$(join '\s+' "$@")"
+        fi
+    fi
+    if [[ ${debug} ]] && setopt VERBOSE
+    man --pager="less ${case} -p '${pattern}'" "${section}"
 }
 function too-many-files {
     function get-most-file-descriptors-open {
@@ -84,12 +119,27 @@ function too-many-files {
         
     done
 }
-function-grep () {
+function function-grep {
     local query="$1";
     local i='';
+    local v='';
+    if [[ "${1}" == '-v' ]]; then v="1"; shift; fi;
     for i in ${(ok)functions}; do;
         if [[  "${functions[$i]}" =~ ${query} && "${i}" != _* ]]; then
-            printf "%s\n" "${i}";
+            if [[ "${v}" ]]; then printf "%s\t%s\n\n" "${i}" "${functions[$i]}";
+            else
+                printf "%s\n" "${i}";
+            fi
         fi; 
     done;
+}
+function define {
+	
+	# espeak for the pronunciation audible output and phonetic alphabet string
+	if [[ "$1" == '-p' ]]; then
+		shift
+		echo "Phoneme mnemonics: $(espeak -ven-uk-rp -x -s 120 "$1" 2> /dev/null)"
+	fi
+	# dict - the client for the dictionary server
+	dict "$1" | less
 }

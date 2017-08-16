@@ -27,6 +27,7 @@ setopt dvorak
 TEST_JOBS=$((1 + $(nproc)))
 export TEST_JOBS
 export KEYTIMEOUT=1
+export EDITOR=vim
 ###########
 [[ "$PROFILE_D_LOADED" && "$samcv_debug" ]] && printf "Profile already loaded. Reloading though.\n" 1>&2
 function {

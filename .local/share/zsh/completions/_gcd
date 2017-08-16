@@ -1,10 +1,17 @@
 #compdef gcd
-function _get-folders () {
-    find -O3 ~/git -maxdepth 2 -type d -printf "%f\n"
-}
-local cmds=(
-    "${(f)$(
-        _get-folders
+# maxdepth should be 1 more than the actual depth you want. Because .git folders
+# count as another level of depth
+maxdepth="4"
+# Makes an array from a newline seperated text with (@f).
+# `find` finds all directory
+
+# -printf "%h" prints out "Leading directories of file's name (all but the last element)"
+foldernames=(
+    "${(@f)$(
+        find -O3 ~/git -maxdepth "${maxdepth}" -type d -name '.git' -printf "%h\n"
     )}"
 )
-_describe -t commands 'command params' cmds
+# :t returns only the basename of the path. so rakudo, nqp, etc.
+foldernames=( ${foldernames:t} )
+
+_describe -t commands 'command params' foldernames

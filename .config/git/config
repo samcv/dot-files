@@ -15,8 +15,8 @@
 	indentHeuristic = on
 	compactionHeuristic = on
 
-[diff "perl6"]
-xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
+#[diff "perl6"]
+#xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
 
 [alias]
 	log-merge = !git log $(git merge-base --octopus $(git log -1 --merges --pretty=format:%P $1))..$1 --graph --pretty=oneline --abbrev-commit --boundary
@@ -36,3 +36,21 @@ xfuncname = "^[\t ]*((method|sub|class)[\t ]+.*)$"
 [status]
 	submoduleSummary = 1
 	color = always
+[remote "origin"]
+	fetch = +refs/notes/*:refs/notes/*
+[remote "upstream"]
+fetch = +refs/notes/*:refs/notes/*
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = yellow bold
+	newNormal = blue bold
+	newHighlight = 226 bold 56
+	oldHighlight = 56 bold 226
+[color "diff"]
+	meta = bold
+	frag = magenta bold
+	commit = 227 bold
+	old = yellow bold
+	new = blue bold
+	whitespace = blue reverse
